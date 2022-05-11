@@ -17,10 +17,13 @@ features = [ "without-ocamlopt" ]
 
 [dependencies]
 ocaml-sys = "0.22"
-ocaml-boxroot-sys = "0.2"
+ocaml-boxroot-sys = "*"
 static_assertions = "1.1.0"
 
 [features]
 without-ocamlopt = ["ocaml-sys/without-ocamlopt", "ocaml-boxroot-sys/without-ocamlopt"]
 caml-state = ["ocaml-sys/caml-state"]
 no-caml-startup = []
+
+[patch.crates-io]
+ocaml-boxroot-sys = { version ="0.3.0", git = 'https://gitlab.com/ocaml-rust/ocaml-boxroot', branch = "main" }
